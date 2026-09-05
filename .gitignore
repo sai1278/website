@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/venv/
+
+# Build output
+dist/
+frontend/dist/
+
+# Python caches and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local env and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+service_account.json
+backend/service_account.json
+credentials.json
+backend/credentials.json
+
+# Logs
+*.log
+
+# Local lead backup queue
+backend/data/
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/

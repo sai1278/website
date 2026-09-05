@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Vortiqen — global foundation
+   Tokens live in tailwind.config.js; this file only sets the
+   base document, the hairline grid primitives, and motion
+   fallbacks. No Tailwind utility is ever overridden here.
+   ============================================================ */
+
+@layer base {
+  :root {
+    --line: rgba(255, 255, 255, 0.075);
+    --line-strong: rgba(255, 255, 255, 0.14);
+    --nav-h: 4.25rem;
+
+    /* Shell geometry, exposed so full-bleed children (the work rail) can
+       align their first item to the shell's inner edge rather than to the
+       viewport edge. */
+    --shell-max: 80rem;
+    --gutter: clamp(1.25rem, 4vw, 2.5rem);
+    --shell-inset: max(var(--gutter), calc((100% - var(--shell-max)) / 2 + var(--gutter)));
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* Anchors clear the fixed navbar without JS offset math. */
+    scroll-padding-top: calc(var(--nav-h) + 1.5rem);
+  }
+
+  body {
+    @apply bg-ink-0 font-sans text-fg-1 antialiased;
+    font-size: 1rem;
+    line-height: 1.65;
+    font-feature-settings: 'cv11', 'ss01';
+    /* Guards against any single element widening the page. */
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-fg-0;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Long URLs / IDs reflow instead of widening their container. */
+  p,
+  li,
+  dd {
+    overflow-wrap: anywhere;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.accent.DEFAULT');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Focus ring is drawn by :focus-visible only — never removed. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  ::selection {
+    background: theme('colors.accent.DEFAULT');
+    color: #fff;
+  }
+
+  button {
+    @apply cursor-pointer;
+    touch-action: manipulation;
+  }
+
+  /* Tabular figures for any number that sits in a column or ticks. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Page shell: one container, one gutter, everywhere. */
+  .shell {
+    @apply mx-auto w-full max-w-shell px-gutter;
+  }
+
+  /* Mono eyebrow used to label every section — the site's connective tissue. */
+  .eyebrow {
+    @apply font-mono text-eyebrow uppercase text-fg-2;
+  }
+
+  /* Hairline rules. The grid is the decoration; there are no gradients. */
+  .rule {
+    @apply h-px w-full border-0 bg-[var(--line)];
+  }
+
+  /* Card surface: flat, hairline-bordered, no shadow, no blur. */
+  .surface {
+    @apply rounded-card border bg-ink-2/70;
+  }
+}
+
+@layer utilities {
+  /* Faint engineering grid. Used at low opacity behind hero/technology only. */
+  .grid-field {
+    background-image: linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  /* Fades a decorative layer out toward its edges so it never hard-clips. */
+  .mask-radial {
+    -webkit-mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, #000 20%, transparent 78%);
+    mask-image: radial-gradient(ellipse 65% 60% at 50% 40%, #000 20%, transparent 78%);
+  }
+
+  .mask-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+}
+
+/* Scrollbar — quiet, matches the canvas. */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08090b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #20252d;
+    border: 3px solid #08090b;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2e343e;
+  }
+}
+
+/* ------------------------------------------------------------
+   Reduced motion: the site must be complete and correct with
+   every animation removed. Framer Motion variants are gated in
+   JS (useReducedMotion); this covers CSS-driven motion.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
