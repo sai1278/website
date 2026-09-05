@@ -36,8 +36,8 @@ export default function Technology() {
 
   return (
     <Section id="technology" label="Engineering" index="05">
-      <div className="shell pt-14">
-        <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
+      <div className="shell pt-8 md:pt-14">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-20">
           {/* ------------------------------------------------------- copy */}
           <div>
             <motion.div {...fadeUp(0, 24)}>
@@ -55,7 +55,7 @@ export default function Technology() {
             {/* Layer selector. Every row always shows its contents; the active
                 row simply brightens. Revealing items only on selection left
                 four empty rows and read as unfinished. */}
-            <motion.ul {...fadeUp(0.1)} className="mt-12 border-t border-[var(--line)]">
+            <motion.ul {...fadeUp(0.1)} className="mt-8 md:mt-12 border-t border-[var(--line)]">
               {TECH_LAYERS.map((layer, i) => {
                 const isActive = active === i
                 return (
@@ -101,7 +101,7 @@ export default function Technology() {
           {/* ----------------------------------------------------- diagram */}
           <motion.div
             {...fadeUp(0.05, 28)}
-            className="relative mx-auto aspect-square w-full max-w-[25rem]"
+            className="relative mx-auto aspect-square w-full max-w-[17rem] sm:max-w-[20rem] lg:max-w-[25rem]"
           >
             <div
               aria-hidden="true"

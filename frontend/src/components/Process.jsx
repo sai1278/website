@@ -23,8 +23,8 @@ export default function Process() {
 
   return (
     <Section id="process" label="Solutions" index="03">
-      <div ref={ref} className="shell pt-14">
-        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+      <div ref={ref} className="shell pt-8 md:pt-14">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           {/* ------------------------------------------------- sticky side */}
           <div className="lg:sticky lg:top-[calc(var(--nav-h)+4rem)] lg:self-start">
             <motion.div {...fadeUp(0, 24)}>
@@ -36,7 +36,7 @@ export default function Process() {
                 depends on, which is what keeps the work reviewable.
               </p>
 
-              <p className="mt-10 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-fg-2/70">
+              <p className="mt-6 md:mt-10 font-mono text-[0.6875rem] uppercase tracking-[0.16em] text-fg-2/70">
                 05 stages
               </p>
             </motion.div>
@@ -62,7 +62,7 @@ export default function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-18% 0px -18% 0px' }}
                 transition={{ duration: DUR.slow, ease: EASE_OUT }}
-                className="relative pb-14 last:pb-0 sm:pl-10"
+                className="relative pb-8 md:pb-14 last:pb-0 sm:pl-10"
               >
                 {/* Node on the rail */}
                 <span
@@ -86,7 +86,7 @@ export default function Process() {
                 </p>
 
                 {i < PROCESS.length - 1 && (
-                  <hr className="mt-14 border-[var(--line)] sm:hidden" />
+                  <hr className="mt-8 md:mt-14 border-[var(--line)] sm:hidden" />
                 )}
               </motion.li>
             ))}

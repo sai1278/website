@@ -12,8 +12,8 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[var(--line)]">
-      <div className="shell py-16">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="shell py-10 md:py-16">
+        <div className="grid gap-8 md:gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 text-fg-0">
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-[var(--line)] pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 md:mt-16 flex flex-col gap-3 border-t border-[var(--line)] pt-6 md:pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[0.6875rem] text-fg-2">
             © {year} {COMPANY.name}. All rights reserved.
           </p>

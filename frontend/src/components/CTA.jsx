@@ -18,7 +18,7 @@ export default function CTA() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative overflow-hidden py-section"
+      className="relative overflow-hidden py-12 md:py-section"
     >
       <div
         aria-hidden="true"
@@ -32,14 +32,14 @@ export default function CTA() {
           whileInView={{ opacity: 1, scaleY: 1 }}
           viewport={inView}
           transition={{ duration: 1.1, ease: EASE_OUT }}
-          className="border border-[var(--line)] bg-ink-1/40 px-6 py-16 text-center sm:px-12 sm:py-24"
+          className="border border-[var(--line)] bg-ink-1/40 px-6 py-10 text-center sm:px-12 sm:py-24"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={inView}
             transition={{ duration: 1.2, delay: 0.15, ease: EASE_OUT }}
-            className="mx-auto mb-10 w-fit text-fg-1"
+            className="mx-auto mb-6 md:mb-10 w-fit text-fg-1"
           >
             <VortiqenMark className="h-9 w-9" />
           </motion.div>
@@ -71,7 +71,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={inView}
             transition={{ duration: 1.1, delay: 0.46, ease: EASE_OUT }}
-            className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            className="mt-8 md:mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row"
           >
             <Button
               href={ENQUIRY_URL}
@@ -97,7 +97,7 @@ export default function CTA() {
             whileInView={{ opacity: 1 }}
             viewport={inView}
             transition={{ duration: DUR.section, delay: 0.6, ease: EASE_OUT }}
-            className="mt-10 font-mono text-[0.75rem] text-fg-2"
+            className="mt-6 md:mt-10 font-mono text-[0.75rem] text-fg-2"
           >
             <a
               href={`mailto:${COMPANY.email}`}

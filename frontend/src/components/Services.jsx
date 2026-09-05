@@ -42,7 +42,7 @@ function ServiceCard({ service, span }) {
       variants={staggerChild}
       className={[
         'group relative flex flex-col justify-between overflow-hidden',
-        'border-b border-r border-[var(--line)] p-8 lg:p-10',
+        'border-b border-r border-[var(--line)] p-6 md:p-8 lg:p-10',
         'transition-colors duration-base ease-ui hover:bg-ink-1',
         span,
       ].join(' ')}
@@ -64,14 +64,14 @@ function ServiceCard({ service, span }) {
         </div>
 
         <h3
-          className={`mt-8 text-fg-0 ${wide ? 'text-display-sm' : 'text-xl tracking-[-0.015em]'}`}
+          className={`mt-6 md:mt-8 text-fg-0 ${wide ? 'text-display-sm' : 'text-xl tracking-[-0.015em]'}`}
         >
           {service.title}
         </h3>
         <p className="mt-3 max-w-[34rem] text-[0.9375rem] text-fg-1">{service.body}</p>
       </div>
 
-      <ul className="mt-8 flex flex-wrap gap-x-2 gap-y-2">
+      <ul className="mt-6 md:mt-8 flex flex-wrap gap-x-2 gap-y-2">
         {service.meta.map((m) => (
           <li
             key={m}
@@ -88,7 +88,7 @@ function ServiceCard({ service, span }) {
 export default function Services() {
   return (
     <Section id="services" label="Services" index="02">
-      <div className="shell pt-14">
+      <div className="shell pt-8 md:pt-14">
         <SectionHeading
           id="services"
           lede="Six practices, one team. Most engagements draw on more than one."
@@ -103,7 +103,7 @@ export default function Services() {
           The grid is nested inside .shell rather than being one: borders paint
           on the padding box, so a bordered .shell would draw its rules a full
           gutter outside the heading above it. */}
-      <div className="shell mt-16">
+      <div className="shell mt-8 md:mt-16">
         <motion.div
           {...staggerParent(0.06, 0.05)}
           className="grid border-l border-t border-[var(--line)] lg:grid-cols-12"

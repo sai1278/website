@@ -11,7 +11,7 @@ export function Section({ id, label, index, className = '', children, bare = fal
     <section
       id={id}
       aria-labelledby={label ? `${id}-heading` : undefined}
-      className={`relative py-section ${className}`}
+      className={`relative py-12 md:py-section ${className}`}
     >
       {!bare && (
         <div className="shell">

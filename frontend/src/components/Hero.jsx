@@ -34,7 +34,7 @@ export default function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-[calc(var(--nav-h)+1.5rem)] pb-16"
+      className="relative flex min-h-0 lg:min-h-[100svh] flex-col justify-center overflow-hidden pt-[calc(var(--nav-h)+1.5rem)] pb-8 lg:pb-16"
     >
       {/* Faint engineering grid, faded at the edges so it never hard-clips. */}
       <div
@@ -52,7 +52,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: DUR.slow, delay: 0.15, ease: EASE_OUT }}
-            className="eyebrow mb-8 flex items-center gap-3"
+            className="eyebrow mb-6 lg:mb-8 flex items-center gap-3"
           >
             <span className="inline-block h-1.5 w-1.5 rotate-45 bg-accent" />
             Software &amp; Systems Engineering
@@ -98,7 +98,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DUR.slow, delay: 0.75, ease: EASE_OUT }}
-            className="mt-8 max-w-measure text-lead text-fg-1"
+            className="mt-6 lg:mt-8 max-w-measure text-lead text-fg-1"
           >
             Vortiqen designs and engineers scalable digital products, intelligent systems,
             and reliable software infrastructure for ambitious teams.
@@ -108,7 +108,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: DUR.slow, delay: 0.9, ease: EASE_OUT }}
-            className="mt-11 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-8 lg:mt-11 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button href={ENQUIRY_URL}>
               Start a Project
@@ -133,7 +133,7 @@ export default function Hero() {
       <motion.div
         aria-hidden="true"
         style={reduced ? undefined : { y: visualY, opacity: fade }}
-        className="pointer-events-none relative mt-12 flex h-[24vh] min-h-[170px] w-full items-center justify-center lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:h-full lg:w-[46%] lg:justify-end lg:pr-[2vw]"
+        className="pointer-events-none relative mt-6 lg:mt-0 flex h-[20vh] min-h-[140px] max-h-[220px] w-full items-center justify-center lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[46%] lg:justify-end lg:pr-[2vw]"
       >
         <motion.div
           style={reduced ? undefined : { x: px, y: py }}

@@ -12,7 +12,7 @@ import { staggerParent, staggerChild } from '../lib/motion'
 export default function About() {
   return (
     <Section id="about" label="About" index="06">
-      <div className="shell pt-14">
+      <div className="shell pt-8 md:pt-14">
         <SectionHeading
           id="about"
           lede="Vortiqen is a software company focused on building efficient, scalable, and reliable digital systems. We are engineers first — the work is judged on whether it holds up."
@@ -22,13 +22,13 @@ export default function About() {
 
         <motion.dl
           {...staggerParent(0.07, 0.08)}
-          className="mt-16 grid gap-x-14 gap-y-0 border-t border-[var(--line)] md:grid-cols-2"
+          className="mt-8 md:mt-16 grid gap-x-14 gap-y-0 border-t border-[var(--line)] md:grid-cols-2"
         >
           {PRINCIPLES.map((p, i) => (
             <motion.div
               key={p.title}
               variants={staggerChild}
-              className="border-b border-[var(--line)] py-8"
+              className="border-b border-[var(--line)] py-5 md:py-8"
             >
               <dt className="flex items-baseline gap-4">
                 <span className="eyebrow tnum text-fg-2/50">

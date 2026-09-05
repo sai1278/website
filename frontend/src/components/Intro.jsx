@@ -34,7 +34,7 @@ export default function Intro() {
 
   return (
     <Section id="intro" label="Introduction" index="01">
-      <div ref={ref} className="shell pt-14">
+      <div ref={ref} className="shell pt-8 md:pt-14">
         {/* Progressive statement reveal. Under reduced motion the whole
             sentence is simply rendered at full opacity. */}
         <h2 id="intro-heading" className="max-w-5xl text-display-md text-fg-0">
@@ -56,7 +56,7 @@ export default function Intro() {
             section is about breadth, and a list says it fastest. */}
         <motion.ul
           {...staggerParent(0.05, 0.1)}
-          className="mt-16 grid gap-x-10 border-t border-[var(--line)] sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-8 md:mt-16 grid gap-x-10 border-t border-[var(--line)] sm:grid-cols-2 lg:grid-cols-3"
         >
           {DISCIPLINES.map((d, i) => (
             <motion.li
@@ -72,7 +72,7 @@ export default function Intro() {
           ))}
         </motion.ul>
 
-        <motion.p {...fadeUp(0.1)} className="mt-12 max-w-measure text-fg-1">
+        <motion.p {...fadeUp(0.1)} className="mt-8 md:mt-12 max-w-measure text-fg-1">
           Most problems we are handed are not a missing feature. They are a system that
           became difficult to change. We work on both.
         </motion.p>

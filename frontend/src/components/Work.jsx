@@ -170,7 +170,7 @@ export default function Work() {
 
   return (
     <Section id="work" label="Selected Work" index="04">
-      <div className="shell pt-14">
+      <div className="shell pt-8 md:pt-14">
         <div className="flex flex-wrap items-end justify-between gap-8">
           <SectionHeading
             id="work"
@@ -211,7 +211,7 @@ export default function Work() {
         role="region"
         aria-label="Selected work — horizontally scrollable"
         {...staggerParent(0.07, 0.05)}
-        className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 pl-[var(--shell-inset)] pr-gutter scroll-pl-[var(--shell-inset)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="mt-8 md:mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 pl-[var(--shell-inset)] pr-gutter scroll-pl-[var(--shell-inset)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {WORK.map((item, i) => (
           <WorkCard key={item.id} item={item} index={i} />
